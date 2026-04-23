@@ -1,0 +1,23 @@
+base_url = "https://whs31.com"
+
+title = "A blog about lorem ipsum dolor sit amet"
+description = "A blog about lorem ipsum dolor sit amet"
+
+compile_sass = true
+build_search_index = true
+default_language = "en"
+
+[markdown]
+smart_punctuation = true
+github_alerts = true
+
+[markdown.highlighting]
+theme = "catppuccin-mocha"
+
+[extra]
+username = "whs31"
+user_title = "Software Developer"
+user_description = "Bicycle rights irony actually neutra typewriter lyft. Man bun taxidermy put a bird on it, umami yr ramps pop-up ugh bushwick chia lo-fi. Occupy bitters pour-over snackwave you probably haven't heard of them small batch. Cornhole mustache man bun letterpress echo park VHS."
+email = "kerbalspacefruit@gmail.com"
+github_username =  "whs31"
+telegram_username = "whs31"
