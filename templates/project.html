@@ -34,7 +34,11 @@
         {% if page.extra.skills %}
         <ul class="project-skills">
           {% for skill in page.extra.skills %}
-          <li>{{ skill }}</li>
+          <li>
+            {% set icon = macros::skill_icon(skill=skill) | trim %}
+            {% if icon %}<i class="{{ icon }}" aria-hidden="true"></i>{% endif %}
+            {{ skill }}
+          </li>
           {% endfor %}
         </ul>
         {% endif %}

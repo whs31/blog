@@ -41,6 +41,45 @@
 </div>
 {% endmacro header %}
 
+{% macro skill_icon(skill) %}
+{% set s = skill | lower %}
+{% if s == "python" %}devicon-python-plain
+{% elif s == "c++" %}devicon-cplusplus-plain
+{% elif s == "c" %}devicon-c-plain
+{% elif s == "c#" or s == "csharp" %}devicon-csharp-plain
+{% elif s == "rust" %}fa fa-cog
+{% elif s == "cuda" %}fa fa-microchip
+{% elif s == "dsp" %}fa fa-signal
+{% elif s == "geospatial" %}fa fa-globe
+{% elif s == "javascript" or s == "js" %}devicon-javascript-plain
+{% elif s == "typescript" or s == "ts" %}devicon-typescript-plain
+{% elif s == "html" %}devicon-html5-plain
+{% elif s == "css" %}devicon-css3-plain
+{% elif s == "git" %}devicon-git-plain
+{% elif s == "docker" %}devicon-docker-plain
+{% elif s == "react" %}devicon-react-original
+{% elif s == "vue" or s == "vuejs" %}devicon-vuejs-plain
+{% elif s == "go" or s == "golang" %}devicon-go-plain
+{% elif s == "java" %}devicon-java-plain
+{% elif s == "ruby" %}devicon-ruby-plain
+{% elif s == "php" %}devicon-php-plain
+{% elif s == "sql" or s == "mysql" %}devicon-mysql-plain
+{% elif s == "postgresql" or s == "postgres" %}devicon-postgresql-plain
+{% elif s == "mongodb" or s == "mongo" %}devicon-mongodb-plain
+{% elif s == "linux" %}devicon-linux-plain
+{% elif s == "nodejs" or s == "node" %}devicon-nodejs-plain
+{% elif s == "swift" %}devicon-swift-plain
+{% elif s == "aws" %}devicon-amazonwebservices-plain
+{% elif s == "bash" or s == "shell" or s == "terminal" %}fa fa-terminal
+{% elif s == "database" or s == "sql server" %}fa fa-database
+{% elif s == "redis" %}devicon-redis-plain
+{% elif s == "django" %}devicon-django-plain
+{% elif s == "rails" or s == "ruby on rails" %}devicon-rails-plain
+{% elif s == "sass" or s == "scss" %}devicon-sass-plain
+{% elif s == "webpack" %}devicon-webpack-plain
+{% endif %}
+{% endmacro skill_icon %}
+
 {% macro google_analytics() %}
 <!-- Google Analytics -->
 {% if config.extra.google_analytics %}
