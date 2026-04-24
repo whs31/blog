@@ -1,0 +1,72 @@
+{% import "macros.html" as macros %}
+<!DOCTYPE html>
+<html lang="en">
+
+  {{ macros::head() }}
+
+  <body>
+
+    <div class="project-hero">
+
+      <div class="slideshow">
+        {% for slide in page.extra.slides %}
+        <div class="slide{% if loop.first %} active{% endif %}">
+          {% if slide.type == "video" %}
+          <video autoplay loop muted playsinline preload="auto">
+            <source src="{{ config.base_url ~ slide.src }}" type="video/mp4">
+          </video>
+          {% else %}
+          <img src="{{ config.base_url ~ slide.src }}" alt="{{ page.title }} — slide {{ loop.index }}" />
+          {% endif %}
+        </div>
+        {% endfor %}
+      </div>
+
+      <div class="hero-overlay"></div>
+
+      <a class="back-link" href="{{ config.base_url }}">← {{ config.extra.username }}</a>
+
+      <div class="hero-center">
+        <h1>{{ page.title }}</h1>
+        {% if page.description %}
+        <p>{{ page.description }}</p>
+        {% endif %}
+        {% if page.extra.skills %}
+        <ul class="project-skills">
+          {% for skill in page.extra.skills %}
+          <li>{{ skill }}</li>
+          {% endfor %}
+        </ul>
+        {% endif %}
+      </div>
+
+      <a class="down" href="#project" data-scroll>
+        <i class="icon fa fa-chevron-down" aria-hidden="true"></i>
+      </a>
+
+      {% if page.extra.slides | length > 1 %}
+      <div class="slide-dots">
+        {% for slide in page.extra.slides %}
+        <button class="slide-dot{% if loop.first %} active{% endif %}" aria-label="Go to slide {{ loop.index }}"></button>
+        {% endfor %}
+      </div>
+      {% endif %}
+
+    </div>
+
+    <section id="project">
+      <article class="project-body">
+        {{ page.content | safe }}
+      </article>
+    </section>
+
+    <footer class="footer">
+      <p>&copy; {{ config.extra.username }}</p>
+    </footer>
+
+    <script src="{{ config.base_url ~ '/js/sweet-scroll.min.js' }}"></script>
+    <script src="{{ config.base_url ~ '/js/slideshow.js' }}"></script>
+    {{ macros::google_analytics() }}
+
+  </body>
+</html>

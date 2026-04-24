@@ -37,28 +37,32 @@
 </div>
 <div class="user-projects">
   <div class="images-right">
-    <img alt="mountains" src="{{ config.base_url ~ "/img/mountains.jpg" }}" />
+    <img alt="Quasar — SAR imagery platform" src="{{ config.base_url ~ "/img/mountains.jpg" }}" />
   </div>
   <div class="contents">
-    <h3> Project Title </h3>
+    <h3>Quasar</h3>
     <ul>
-      <li> Featured Skills</li>
+      <li>SAR Imagery</li>
+      <li>Remote Sensing</li>
+      <li>C++ / Python</li>
     </ul>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    <a class="project-link" href="#">Check it out</a>
+    <p>Processing pipeline and visualization platform for Synthetic Aperture Radar imagery. Handles the full chain from raw complex-valued radar data to analysis-ready raster products with coherence mapping and speckle reduction.</p>
+    <a class="project-link" href="{{ config.base_url ~ '/projects/quasar/' }}">Check it out</a>
   </div>
 </div>
 <div class="user-projects">
   <div class="images-left">
-    <img alt="mountains" src="{{ config.base_url ~ "/img/skate.jpg" }}" />
+    <img alt="GCS — UAV ground control station" src="{{ config.base_url ~ "/img/skate.jpg" }}" />
   </div>
   <div class="contents-right">
-    <h3> Project Title </h3>
+    <h3>GCS</h3>
     <ul>
-      <li> Featured Skills</li>
+      <li>UAV / MAVLink</li>
+      <li>Qt / C++</li>
+      <li>Networking</li>
     </ul>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-    <a class="project-link" href="#">Check it out</a>
+    <p>Cross-platform ground control station for UAV flight planning, live telemetry, and mission execution. Supports multi-vehicle fleets over MAVLink with an integrated map, instrument panel, and H.264 video feed.</p>
+    <a class="project-link" href="{{ config.base_url ~ '/projects/gcs/' }}">Check it out</a>
   </div>
 </div>
 {% endmacro projects %}
