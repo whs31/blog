@@ -1,11 +1,11 @@
 +++
-title = "Quasar"
-description = "SAR imagery processing and analysis platform for radar remote sensing data."
-date = 2024-01-15
+title = "QuaSAR"
+description = "High-performance synthetic aperture radar firmware, which converts raw signals into high-fidelity georeferenced imagery and videos"
+date = 2026-04-20
 template = "project.html"
 
 [extra]
-skills = ["SAR Imagery", "Remote Sensing", "C++", "Python"]
+skills = ["DSP", "Geospatial", "Rust", "CUDA", "C++", "Python"]
 slides = [
   {src = "/img/quasar-1.jpg",         type = "image"},
   {src = "/video/quasar-demo.mp4",    type = "video"},
