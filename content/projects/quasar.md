@@ -8,7 +8,7 @@ template = "project.html"
 skills = ["DSP", "Geospatial", "Rust", "CUDA", "C++", "Python"]
 slides = [
   {src = "/img/quasar-1.jpg",         type = "image"},
-  {src = "/video/quasar-demo.mp4",    type = "video"},
+  {src = "/img/quasar-2.jpg",         type = "image"},
   {src = "/img/quasar-3.jpg",         type = "image"},
 ]
 +++
