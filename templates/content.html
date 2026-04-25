@@ -1,69 +1,99 @@
-{% macro about() %}
- <div class="user-details">
-  <h1> My Expertise </h1>
-  <p> {{ config.extra.user_description }} </p>
+{% macro about(lang) %}
+{% if lang == "ru" %}
+  {% set section_expertise = "Мои навыки" %}
+  {% set user_description  = "Велосипедные права, ирония и нейтра на пишущей машинке. Таксидермия в стиле мен-бан, умами, рампы, Бушвик, чиа и ло-фай. Биттерс, пур-овер, снеквейв и малые партии. Усы, мен-бан, леттерпресс, Эхо Парк и кассеты VHS." %}
+  {% set tech_design       = "Дизайн" %}
+  {% set tech_code         = "Код" %}
+  {% set tech_tools        = "Инструменты" %}
+  {% set tech_desc         = "Мамблкор, гексагон, комбуча, питчфорк, ло-фай, интеллигентность и мастер-клинз. Виниловый лесоруб XOXO" %}
+{% else %}
+  {% set section_expertise = "My Expertise" %}
+  {% set user_description  = config.extra.user_description %}
+  {% set tech_design       = "Design" %}
+  {% set tech_code         = "Code" %}
+  {% set tech_tools        = "Tools" %}
+  {% set tech_desc         = "Mumblecore hexagon kombucha, pitchfork four loko raclette intelligentsia master cleanse. Vinyl XOXO lumbersexual" %}
+{% endif %}
+<div class="user-details">
+  <h1>{{ section_expertise }}</h1>
+  <p>{{ user_description }}</p>
 </div>
-  <div class="user">
+<div class="user">
     <div class="tech">
-      <h2>Design</h2>
+      <h2>{{ tech_design }}</h2>
       <i class="devicon-html5-plain-wordmark"></i>
       <i class="devicon-bootstrap-plain-wordmark colored"></i>
       <i class="devicon-sass-original colored"></i>
-      <p>Mumblecore hexagon kombucha, pitchfork four loko raclette intelligentsia master cleanse.
-        Vinyl XOXO lumbersexual</p>
+      <p>{{ tech_desc }}</p>
     </div>
     <div class="tech">
-      <h2>Code</h2>
+      <h2>{{ tech_code }}</h2>
       <i class="devicon-javascript-plain colored"></i>
       <i class="devicon-react-original-wordmark colored"></i>
       <i class="devicon-nodejs-plain-wordmark"></i>
-      <p>Mumblecore hexagon kombucha, pitchfork four loko raclette intelligentsia master cleanse.
-        Vinyl XOXO lumbersexual</p>
+      <p>{{ tech_desc }}</p>
     </div>
     <div class="tech">
-      <h2>Tools</h2>
+      <h2>{{ tech_tools }}</h2>
       <i class="devicon-git-plain"></i>
       <i class="devicon-gulp-plain colored"></i>
       <i class="devicon-atom-original-wordmark"></i>
-      <p>Mumblecore hexagon kombucha, pitchfork four loko raclette intelligentsia master cleanse.
-        Vinyl XOXO lumbersexual</p>
+      <p>{{ tech_desc }}</p>
     </div>
 </div>
 {% endmacro about %}
 
-{% macro projects() %}
+{% macro projects(lang) %}
+{% if lang == "ru" %}
+  {% set section_projects = "Избранные проекты" %}
+  {% set quasar_img_alt   = "QuaSAR — платформа РСА-снимков" %}
+  {% set quasar_tags      = "РСА-радиолокация|Дистанционное зондирование|C++ / Python" %}
+  {% set quasar_desc      = "Конвейер обработки и платформа визуализации РСА-снимков. Охватывает полную цепочку от комплексных радарных данных до готовых растровых продуктов с картами когерентности и подавлением спекл-шума." %}
+  {% set gcs_img_alt      = "GCS — наземная станция управления БПЛА" %}
+  {% set gcs_tags         = "БПЛА / MAVLink|Qt / C++|Сетевые технологии" %}
+  {% set gcs_desc         = "Кроссплатформенная наземная станция управления для планирования полётов БПЛА, передачи телеметрии и выполнения миссий. Поддерживает группы из нескольких машин через MAVLink с картой, приборной панелью и видеопотоком H.264." %}
+  {% set link_check_out   = "Подробнее" %}
+{% else %}
+  {% set section_projects = "Featured Projects" %}
+  {% set quasar_img_alt   = "Quasar — SAR imagery platform" %}
+  {% set quasar_tags      = "SAR Imagery|Remote Sensing|C++ / Python" %}
+  {% set quasar_desc      = "Processing pipeline and visualization platform for Synthetic Aperture Radar imagery. Handles the full chain from raw complex-valued radar data to analysis-ready raster products with coherence mapping and speckle reduction." %}
+  {% set gcs_img_alt      = "GCS — UAV ground control station" %}
+  {% set gcs_tags         = "UAV / MAVLink|Qt / C++|Networking" %}
+  {% set gcs_desc         = "Cross-platform ground control station for UAV flight planning, live telemetry, and mission execution. Supports multi-vehicle fleets over MAVLink with an integrated map, instrument panel, and H.264 video feed." %}
+  {% set link_check_out   = "Check it out" %}
+{% endif %}
 <div class="user-details">
-  <h1> Featured Projects </h1>
+  <h1>{{ section_projects }}</h1>
 </div>
 <div class="user-projects">
   <div class="images-right">
-    <img alt="Quasar — SAR imagery platform" src="{{ config.base_url ~ "/img/mountains.jpg" }}" />
+    <img alt="{{ quasar_img_alt }}" src="{{ config.base_url ~ "/img/mountains.jpg" }}" />
   </div>
   <div class="contents">
-    <h3>Quasar</h3>
+    <h3>QuaSAR</h3>
     <ul>
-      <li>SAR Imagery</li>
-      <li>Remote Sensing</li>
-      <li>C++ / Python</li>
+      {% for tag in quasar_tags | split(pat="|") %}
+      <li>{{ tag }}</li>
+      {% endfor %}
     </ul>
-    <p>Processing pipeline and visualization platform for Synthetic Aperture Radar imagery. Handles the full chain from raw complex-valued radar data to analysis-ready raster products with coherence mapping and speckle reduction.</p>
-    <a class="project-link" href="{{ config.base_url ~ '/projects/quasar/' }}">Check it out</a>
+    <p>{{ quasar_desc }}</p>
+    <a class="project-link" href="{{ config.base_url }}{% if lang == "ru" %}/ru{% endif %}/projects/quasar/">{{ link_check_out }}</a>
   </div>
 </div>
 <div class="user-projects">
   <div class="images-left">
-    <img alt="GCS — UAV ground control station" src="{{ config.base_url ~ "/img/skate.jpg" }}" />
+    <img alt="{{ gcs_img_alt }}" src="{{ config.base_url ~ "/img/skate.jpg" }}" />
   </div>
   <div class="contents-right">
     <h3>GCS</h3>
     <ul>
-      <li>UAV / MAVLink</li>
-      <li>Qt / C++</li>
-      <li>Networking</li>
+      {% for tag in gcs_tags | split(pat="|") %}
+      <li>{{ tag }}</li>
+      {% endfor %}
     </ul>
-    <p>Cross-platform ground control station for UAV flight planning, live telemetry, and mission execution. Supports multi-vehicle fleets over MAVLink with an integrated map, instrument panel, and H.264 video feed.</p>
-    <a class="project-link" href="{{ config.base_url ~ '/projects/gcs/' }}">Check it out</a>
+    <p>{{ gcs_desc }}</p>
+    <a class="project-link" href="{{ config.base_url }}{% if lang == "ru" %}/ru{% endif %}/projects/gcs/">{{ link_check_out }}</a>
   </div>
 </div>
 {% endmacro projects %}
-

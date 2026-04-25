@@ -21,25 +21,51 @@
 <script src="{{ config.base_url ~ "/js/main.js" }}"></script>
 {% endmacro footer %}
 
-{% macro header() %}
+{% macro header(lang) %}
+{% if lang == "ru" %}
+  {% set nav_about     = "Обо мне" %}
+  {% set nav_projects  = "Проекты" %}
+  {% set aria_github   = "Мой Github" %}
+  {% set aria_telegram = "Мой Telegram" %}
+  {% set user_title    = "Разработчик ПО" %}
+{% else %}
+  {% set nav_about     = "About Me" %}
+  {% set nav_projects  = "Projects" %}
+  {% set aria_github   = "My Github" %}
+  {% set aria_telegram = "My Telegram" %}
+  {% set user_title    = config.extra.user_title %}
+{% endif %}
 <div id="particles-js">
   <div class="header">
       <h1>
         <span class="site-title">{{ config.extra.username }}</span>
-        <span class="site-description">{{ config.extra.user_title | linebreaksbr | safe }}</span>
+        <span class="site-description">{{ user_title | linebreaksbr | safe }}</span>
       </h1>
       <div class="header-icons">
-        <a aria-label="My Github" target="_blank" href="https://github.com/{{ config.extra.github_username }}"><i class="icon fa fa-github-alt" aria-hidden="true"></i></a>
-        <a aria-label="My Telegram" target="_blank" href="https://t.me/{{ config.extra.telegram_username }}"><i class="icon fa fa-telegram" aria-hidden="true"></i></a>
+        <a aria-label="{{ aria_github }}" target="_blank" href="https://github.com/{{ config.extra.github_username }}"><i class="icon fa fa-github-alt" aria-hidden="true"></i></a>
+        <a aria-label="{{ aria_telegram }}" target="_blank" href="https://t.me/{{ config.extra.telegram_username }}"><i class="icon fa fa-telegram" aria-hidden="true"></i></a>
       </div>
       <div class="header-links">
-        <a class="link" href="#about" data-scroll>About Me</a>
-        <a class="link" href="#projects" data-scroll>Projects</a>
+        <a class="link" href="#about" data-scroll>{{ nav_about }}</a>
+        <a class="link" href="#projects" data-scroll>{{ nav_projects }}</a>
       </div>
   </div>
   <a class="down" href="#about" data-scroll><i class="icon fa fa-chevron-down" aria-hidden="true"></i></a>
 </div>
 {% endmacro header %}
+
+{% macro lang_switcher(lang, en_url, ru_url) %}
+<div class="lang-switcher">
+  <a href="{{ en_url }}" class="lang-btn{% if lang == 'en' %} active{% endif %}">
+    <span class="lang-flag">🇬🇧</span>
+    <span class="lang-name">EN</span>
+  </a>
+  <a href="{{ ru_url }}" class="lang-btn{% if lang == 'ru' %} active{% endif %}">
+    <span class="lang-flag">🇷🇺</span>
+    <span class="lang-name">RU</span>
+  </a>
+</div>
+{% endmacro lang_switcher %}
 
 {% macro skill_icon(skill) %}
 {% set s = skill | lower %}

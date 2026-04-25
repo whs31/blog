@@ -19,5 +19,9 @@ username = "whs31"
 user_title = "Software Developer"
 user_description = "Bicycle rights irony actually neutra typewriter lyft. Man bun taxidermy put a bird on it, umami yr ramps pop-up ugh bushwick chia lo-fi. Occupy bitters pour-over snackwave you probably haven't heard of them small batch. Cornhole mustache man bun letterpress echo park VHS."
 email = "kerbalspacefruit@gmail.com"
-github_username =  "whs31"
+github_username = "whs31"
 telegram_username = "whs31"
+
+[languages.ru]
+title = "Блог о lorem ipsum dolor sit amet"
+description = "Блог о lorem ipsum dolor sit amet"

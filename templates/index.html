@@ -2,20 +2,22 @@
 {% import "content.html" as content %}
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ lang }}">
 
   {{ macros::head() }}
 
   <body>
 
-      {{ macros::header() }}
+      {{ macros::lang_switcher(lang=lang, en_url=config.base_url ~ "/", ru_url=config.base_url ~ "/ru/") }}
+
+      {{ macros::header(lang=lang) }}
 
       <section id="about">
-        {{ content::about() }}
+        {{ content::about(lang=lang) }}
       </section>
 
       <section id="projects">
-        {{ content::projects() }}
+        {{ content::projects(lang=lang) }}
       </section>
 
       {% block content %}
