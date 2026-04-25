@@ -56,28 +56,28 @@
 
 {% macro lang_switcher(lang, en_url, ru_url) %}
 {% if lang == "ru" %}
-  {% set current_flag = "🇷🇺" %}
+  {% set current_icon = config.base_url ~ "/img/icons/russia.svg" %}
   {% set current_name = "Русский" %}
 {% else %}
-  {% set current_flag = "🇺🇸" %}
+  {% set current_icon = config.base_url ~ "/img/icons/usa.svg" %}
   {% set current_name = "English" %}
 {% endif %}
 <div class="lang-switcher" id="lang-switcher">
   <button class="lang-current" id="lang-toggle" aria-haspopup="listbox" aria-expanded="false">
-    <span class="lang-flag">{{ current_flag }}</span>
+    <img class="lang-flag" src="{{ current_icon }}" alt="{{ current_name }}">
     <span class="lang-name">{{ current_name }}</span>
     <i class="lang-arrow fa fa-chevron-down" aria-hidden="true"></i>
   </button>
   <ul class="lang-dropdown" id="lang-dropdown" role="listbox">
     <li role="option"{% if lang == "en" %} aria-selected="true"{% endif %}>
       <a href="{{ en_url }}" class="lang-option{% if lang == 'en' %} active{% endif %}">
-        <span class="lang-flag">🇺🇸</span>
+        <img class="lang-flag" src="{{ config.base_url ~ "/img/icons/usa.svg" }}" alt="English">
         <span class="lang-name">English</span>
       </a>
     </li>
     <li role="option"{% if lang == "ru" %} aria-selected="true"{% endif %}>
       <a href="{{ ru_url }}" class="lang-option{% if lang == 'ru' %} active{% endif %}">
-        <span class="lang-flag">🇷🇺</span>
+        <img class="lang-flag" src="{{ config.base_url ~ "/img/icons/russia.svg" }}" alt="Русский">
         <span class="lang-name">Русский</span>
       </a>
     </li>

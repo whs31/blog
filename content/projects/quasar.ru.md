@@ -10,6 +10,8 @@ slides = [
   {src = "/img/quasar-1.jpg",         type = "image"},
   {src = "/img/quasar-2.jpg",         type = "image"},
   {src = "/img/quasar-3.jpg",         type = "image"},
+  {src = "/img/quasar-4.jpg",         type = "image"},
+  {src = "/img/quasar-5.jpg",         type = "image"},
 ]
 +++
 
