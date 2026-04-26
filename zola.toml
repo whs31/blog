@@ -1,7 +1,7 @@
 base_url = "https://whs31.com"
 
-title = "A blog about lorem ipsum dolor sit amet"
-description = "A blog about lorem ipsum dolor sit amet"
+title = "whs31's Blog & Portfolio"
+description = "whs31's blog and portfolio"
 
 compile_sass = true
 build_search_index = true
@@ -17,11 +17,11 @@ theme = "catppuccin-mocha"
 [extra]
 username = "whs31"
 user_title = "Software Developer"
-user_description = "Bicycle rights irony actually neutra typewriter lyft. Man bun taxidermy put a bird on it, umami yr ramps pop-up ugh bushwick chia lo-fi. Occupy bitters pour-over snackwave you probably haven't heard of them small batch. Cornhole mustache man bun letterpress echo park VHS."
+user_description = ""
 email = "kerbalspacefruit@gmail.com"
 github_username = "whs31"
 telegram_username = "whs31"
 
 [languages.ru]
-title = "Блог о lorem ipsum dolor sit amet"
-description = "Блог о lorem ipsum dolor sit amet"
+title = "Блог и портфолио whs31"
+description = "Блог и портфолио whs31"

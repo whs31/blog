@@ -1,31 +1,22 @@
-{% import "macros.html" as macros %}
-{% import "content.html" as content %}
+{% import "macros.html" as macros %} {% import "content.html" as content %}
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="{{ lang }}">
+    {{ macros::head() }}
 
-  {{ macros::head() }}
+    <body>
+        {{ macros::lang_switcher(lang=lang, en_url=config.base_url ~ "/",
+        ru_url=config.base_url ~ "/ru/") }} {{ macros::header(lang=lang) }}
 
-  <body>
-
-      {{ macros::lang_switcher(lang=lang, en_url=config.base_url ~ "/", ru_url=config.base_url ~ "/ru/") }}
-
-      {{ macros::header(lang=lang) }}
-
-      <section id="about">
+        <!--<section id="about">
         {{ content::about(lang=lang) }}
-      </section>
+      </section>-->
 
-      <section id="projects">
-        {{ content::projects(lang=lang) }}
-      </section>
+        <section id="projects">{{ content::projects(lang=lang) }}</section>
 
-      {% block content %}
-      <p></p>
-      {% endblock content %}
-
-
-      {{ macros::footer() }}
-      {{ macros::google_analytics() }}
-
-  </body>
+        {% block content %}
+        <p></p>
+        {% endblock content %} {{ macros::footer() }} {{
+        macros::google_analytics() }}
+    </body>
+</html>
