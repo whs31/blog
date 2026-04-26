@@ -1,66 +1,17 @@
-{% macro about(lang) %}
-{% if lang == "ru" %}
-  {% set section_expertise = "Мои навыки" %}
-  {% set user_description  = "Велосипедные права, ирония и нейтра на пишущей машинке. Таксидермия в стиле мен-бан, умами, рампы, Бушвик, чиа и ло-фай. Биттерс, пур-овер, снеквейв и малые партии. Усы, мен-бан, леттерпресс, Эхо Парк и кассеты VHS." %}
-  {% set tech_design       = "Дизайн" %}
-  {% set tech_code         = "Код" %}
-  {% set tech_tools        = "Инструменты" %}
-  {% set tech_desc         = "Мамблкор, гексагон, комбуча, питчфорк, ло-фай, интеллигентность и мастер-клинз. Виниловый лесоруб XOXO" %}
-{% else %}
-  {% set section_expertise = "My Expertise" %}
-  {% set user_description  = config.extra.user_description %}
-  {% set tech_design       = "Design" %}
-  {% set tech_code         = "Code" %}
-  {% set tech_tools        = "Tools" %}
-  {% set tech_desc         = "Mumblecore hexagon kombucha, pitchfork four loko raclette intelligentsia master cleanse. Vinyl XOXO lumbersexual" %}
-{% endif %}
-<div class="user-details">
-  <h1>{{ section_expertise }}</h1>
-  <p>{{ user_description }}</p>
-</div>
-<div class="user">
-    <div class="tech">
-      <h2>{{ tech_design }}</h2>
-      <i class="devicon-html5-plain-wordmark"></i>
-      <i class="devicon-bootstrap-plain-wordmark colored"></i>
-      <i class="devicon-sass-original colored"></i>
-      <p>{{ tech_desc }}</p>
-    </div>
-    <div class="tech">
-      <h2>{{ tech_code }}</h2>
-      <i class="devicon-javascript-plain colored"></i>
-      <i class="devicon-react-original-wordmark colored"></i>
-      <i class="devicon-nodejs-plain-wordmark"></i>
-      <p>{{ tech_desc }}</p>
-    </div>
-    <div class="tech">
-      <h2>{{ tech_tools }}</h2>
-      <i class="devicon-git-plain"></i>
-      <i class="devicon-gulp-plain colored"></i>
-      <i class="devicon-atom-original-wordmark"></i>
-      <p>{{ tech_desc }}</p>
-    </div>
-</div>
-{% endmacro about %}
+{% macro about(lang) %}{% endmacro about %}
 
 {% macro projects(lang) %}
 {% if lang == "ru" %}
   {% set section_projects = "Избранные проекты" %}
-  {% set quasar_img_alt   = "QuaSAR — платформа РСА-снимков" %}
-  {% set quasar_tags      = "РСА-радиолокация|Дистанционное зондирование|C++ / Python" %}
-  {% set quasar_desc      = "Конвейер обработки и платформа визуализации РСА-снимков. Охватывает полную цепочку от комплексных радарных данных до готовых растровых продуктов с картами когерентности и подавлением спекл-шума." %}
-  {% set gcs_img_alt      = "GCS — наземная станция управления БПЛА" %}
-  {% set gcs_tags         = "БПЛА / MAVLink|Qt / C++|Сетевые технологии" %}
-  {% set gcs_desc         = "Кроссплатформенная наземная станция управления для планирования полётов БПЛА, передачи телеметрии и выполнения миссий. Поддерживает группы из нескольких машин через MAVLink с картой, приборной панелью и видеопотоком H.264." %}
+  {% set quasar_img_alt   = "QuaSAR — система формирования РСА-снимков" %}
+  {% set quasar_tags      = "Rust / CUDA|ЦОС / РСА|Встраиваемые системы" %}
+  {% set quasar_desc      = "Высокопроизводительный программный комплекс формирования радиолокационных изображений для радара с синтезированной апертурой. Поддерживает аппаратное ускорение NVIDIA CUDA, телескопический и полосовой режимы съёмки, автофокусировку по минимуму энтропии, синтез видеопотока H.265 и детектирование объектов нейросетью YOLO11 OBB." %}
   {% set link_check_out   = "Подробнее" %}
 {% else %}
   {% set section_projects = "Featured Projects" %}
-  {% set quasar_img_alt   = "Quasar — SAR imagery platform" %}
-  {% set quasar_tags      = "SAR Imagery|Remote Sensing|C++ / Python" %}
-  {% set quasar_desc      = "Processing pipeline and visualization platform for Synthetic Aperture Radar imagery. Handles the full chain from raw complex-valued radar data to analysis-ready raster products with coherence mapping and speckle reduction." %}
-  {% set gcs_img_alt      = "GCS — UAV ground control station" %}
-  {% set gcs_tags         = "UAV / MAVLink|Qt / C++|Networking" %}
-  {% set gcs_desc         = "Cross-platform ground control station for UAV flight planning, live telemetry, and mission execution. Supports multi-vehicle fleets over MAVLink with an integrated map, instrument panel, and H.264 video feed." %}
+  {% set quasar_img_alt   = "QuaSAR — SAR image formation system" %}
+  {% set quasar_tags      = "Rust / CUDA|DSP / SAR|Embedded Systems" %}
+  {% set quasar_desc      = "High-Performance Software Package for Synthetic Aperture Radar Imagery. Supports NVIDIA CUDA hardware-accelerated telescopic and strip imaging modes, entropy-based autofocus, H.265 video stream synthesis, and YOLO11 OBB object detection. Targets NVIDIA Jetson Orin and x86_64 Linux." %}
   {% set link_check_out   = "Check it out" %}
 {% endif %}
 <div class="user-details">
@@ -81,19 +32,4 @@
     <a class="project-link" href="{{ config.base_url }}{% if lang == "ru" %}/ru{% endif %}/projects/quasar/">{{ link_check_out }}</a>
   </div>
 </div>
-<!--<div class="user-projects">
-  <div class="images-left">
-    <img alt="{{ gcs_img_alt }}" src="{{ config.base_url ~ "/img/skate.jpg" }}" />
-  </div>
-  <div class="contents-right">
-    <h3>GCS</h3>
-    <ul>
-      {% for tag in gcs_tags | split(pat="|") %}
-      <li>{{ tag }}</li>
-      {% endfor %}
-    </ul>
-    <p>{{ gcs_desc }}</p>
-    <a class="project-link" href="{{ config.base_url }}{% if lang == "ru" %}/ru{% endif %}/projects/gcs/">{{ link_check_out }}</a>
-  </div>
-</div>-->
 {% endmacro projects %}
