@@ -179,9 +179,15 @@
   p { margin: 0 0 1em; }
 
   a {
-    color: $purple;
-    text-decoration: none;
-    &:hover { text-decoration: underline; }
+    color: #4f7ef7;
+    text-decoration: underline;
+    text-decoration-color: rgba(79, 126, 247, 0.35);
+    text-underline-offset: 3px;
+    transition: color 0.15s ease, text-decoration-color 0.15s ease;
+    &:hover {
+      color: #2e5ddc;
+      text-decoration-color: rgba(46, 93, 220, 0.7);
+    }
   }
 
   strong { color: $main; font-weight: 600; }
