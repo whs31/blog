@@ -110,9 +110,9 @@ slides = [
 
 #### Используемые библиотеки
 ##### Обработка сигналов и математические вычисления
-- [**NVIDIA cuFFT**](https://developer.nvidia.com/cufft) ![](/img/icons/nvidia-logo.png) -- высокопроизводительная библиотека для выполнения БПФ на ядрах CUDA;
+- [**NVIDIA cuFFT**](https://developer.nvidia.com/cufft)<img class="lib-icon" src="/img/icons/nvidia-logo.png"> -- высокопроизводительная библиотека для выполнения БПФ на ядрах CUDA;
 - [**rustfft**](https://github.com/ejmahler/RustFFT) и [**realfft**](https://github.com/HEnquist/realfft) -- эффективные реализации БПФ на ЦП, поддерживающие наборы инструкций *AVX* и *SSE4.1* (x86_64) и *NEON* (ARM64);
-- [**ndarray**](https://github.com/rust-ndarray/ndarray) и [**nalgebra**](https://github.com/dimforge/nalgebra) ![](/img/icons/nalgebra-logo.png) -- работа с многомерными массивами и линейной алгеброй
+- [**ndarray**](https://github.com/rust-ndarray/ndarray) и [**nalgebra**](https://github.com/dimforge/nalgebra)<img class="lib-icon" src="/img/icons/nalgebra-logo.png"> -- работа с многомерными массивами и линейной алгеброй
 
 ##### Параллелизм
 - [**crossbeam**](https://github.com/crossbeam-rs/crossbeam) -- набор инструментов для реализации многопоточности
@@ -123,14 +123,14 @@ slides = [
 - [**memmap2**](https://github.com/RazrFalcon/memmap2-rs) -- проекция файлов в ОЗУ (`mmap`), позволяющая эффективно обрабатывать большие голограммы
 
 ##### Работа с данными и форматами
-- [**GDAL**](https://gdal.org) ![](/img/icons/gdal-logo.png) -- библиотека для чтения и записи геопространственных растровых данных
+- [**GDAL**](https://gdal.org)<img class="lib-icon" src="/img/icons/gdal-logo.png"> -- библиотека для чтения и записи геопространственных растровых данных
 - [**memchr**](https://github.com/BurntSushi/memchr) -- оптимизированный поиск паттернов в голограмме
 - [**serde**](https://github.com/serde-rs/serde) -- фреймворк сериализации/десериализации данных общего назначения
 
 ##### Визуализация и анализ
-- [**OpenCV**](https://opencv.org/) ![](/img/icons/opencv-logo.png) -- открытая библиотека компьютерного зрения
+- [**OpenCV**](https://opencv.org/)<img class="lib-icon" src="/img/icons/opencv-logo.png"> -- открытая библиотека компьютерного зрения
 - [**plotters**](https://github.com/plotters-rs/plotters) -- библиотека для построения графиков и диаграмм
-- [**FFMpeg**](https://ffmpeg.org/) ![](/img/icons/ffmpeg-logo.png) -- универсальный инструмент для обработки мультимедиа
+- [**FFMpeg**](https://ffmpeg.org/)<img class="lib-icon" src="/img/icons/ffmpeg-logo.png"> -- универсальный инструмент для обработки мультимедиа
 
 Для профайлинга и выявления узких мест используется [**Tracy**](https://github.com/wolfpld/tracy.git).
 ![Tracy profiler](/img/quasar-tracy.png)
