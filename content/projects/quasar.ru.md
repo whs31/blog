@@ -55,12 +55,12 @@ slides = [
 Для сравнения выбрано время формирования полосового радиолокационного изображения участка местности размером 3,000 × 4,529 м.
 | Платформа                         |   Режим              |   Время выполнения   |
 | --------------------------------- | -------------------- | -------------------- |
-| Jetson Orin AGX                   |   GPU (CUDA)         |   35.2 c             |
-| Jetson Orin NX                    |   GPU (CUDA)         |   48.1 c             |
-| Jetson Orin Nano                  |   GPU (CUDA)         |   48.3 c             |
-| ПК (RTX 5070, AMD Ryzen 5 7600)   |   GPU (CUDA)         |   14.0 c             |
-| ПК (RTX 5070, AMD Ryzen 5 7600)   |   CPU (12 потоков)   |   39.8 c             |
-| Raspberry Pi 5                    |   CPU (4 потока)     |   116.5 c            |
+| **Jetson Orin AGX**                   |   GPU (CUDA)         |   <span class="perf-fast">35.2 с</span>   |
+| **Jetson Orin NX**                    |   GPU (CUDA)         |   <span class="perf-mid">48.1 с</span>   |
+| **Jetson Orin Nano**                  |   GPU (CUDA)         |   <span class="perf-mid">48.3 с</span>   |
+| **ПК (RTX 5070, AMD Ryzen 5 7600)**   |   GPU (CUDA)         |   <span class="perf-fast">14.0 с</span>  |
+| **ПК (RTX 5070, AMD Ryzen 5 7600)**   |   CPU (12 потоков)   |   <span class="perf-mid">39.8 с</span>   |
+| **Raspberry Pi 5**                    |   CPU (4 потока)     |   <span class="perf-slow">116.5 с</span> |
 
 ## Технологический стек
 Проект написан на языке **Rust** (Edition 2024). Для достижения максимальной производительности при обработке сигналов используется **CUDA 12**, интеграция с которой выполнена через C FFI.
