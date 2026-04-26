@@ -90,5 +90,5 @@ slides = [
 - [**FFMpeg**](https://ffmpeg.org/) - универсальный инструмент для обработки мультимедиа
 
 Для профайлинга и выявления узких мест используется [**Tracy**](https://github.com/wolfpld/tracy.git).
-![Tracy profiler](img/quasar-tracy.png)
-![Cargo flamegraph](img/quasar-flamegraph.png)
+![Tracy profiler](/img/quasar-tracy.png)
+![Cargo flamegraph](/img/quasar-flamegraph.png)
